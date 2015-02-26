@@ -1,8 +1,8 @@
 var barChart = function(pElement){
   var lElement = pElement
   console.log(pElement[0][0].offsetWidth)
-  var n = 4, // number of layers
-      m = 58, // number of samples per layer
+  var n = 10, // number of layers
+      m = 20, // number of samples per layer
       stack = d3.layout.stack(),
       layers = stack(d3.range(n).map(function() { return bumpLayer(m, .1); })),
       yGroupMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y; }); }),
@@ -20,9 +20,9 @@ var barChart = function(pElement){
       .domain([0, yStackMax])
       .range([height, 0]);
 
-  var color = d3.scale.linear()
-      .domain([0, n - 1])
-      .range(["#aad", "#556"]);
+  var color =d3.scale.category10();// d3.scale.linear()
+      //.domain([0, n - 1])
+      //.range(["#aad", "#556"]);
 
   var xAxis = d3.svg.axis()
       .scale(x)
