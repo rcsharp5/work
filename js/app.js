@@ -26,7 +26,9 @@ app.directive("ftechart",function(){
 	         
 	         },
 	        post: function postLink(scope, iElement, iAttrs, controller) {
-	         var bchart = new barChart()
+	        	var lelement = d3.select("#ftechart")
+	        	console.log(lelement);
+	         var bchart = new barChart(lelement)
 	         }
 	      }
 
