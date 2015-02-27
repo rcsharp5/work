@@ -1,6 +1,6 @@
-app.directive=function("ftechart",function(){
+app.directive("ftechart",function(){
 	
 
 
-	
+
 })

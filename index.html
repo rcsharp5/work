@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myapp" my-App>
 
 <head>
 
@@ -17,16 +17,46 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="/js/treemap/itTreemap.js"></script>
+<link rel="stylesheet" href="css/dash.css">
+<link rel="stylesheet" href="css/main.css">
+	<script src="js/app.js"></script>
+	<script src="js/barCharts/chart.js"></script>
 </head>
 <body>
 	<div class="row">
 	<div class="panel panel-default col-md-offset-1 col-md-9">
-		<div class="panel-heading">
-			DASHBOARD
-		</div>
+		<div class="panel-heading" headerdir></div>
 		<div class="panel-body ">
-			<div class="col-md-9">main</div>
-			<div class="col-md-3">pies here</div>
+			<div class="col-md-9">
+				<div dashpanel class="col-md-12"></div>	
+				<div ftechart class="col-md-12"></div>
+			</div>
+			<div class="col-md-3">
+				<div class=" col-md-12">	
+					<div class="header text-center ">Latest Projects</div>
+					<div class=" bodybox col-md-12">
+						
+							<div class="">
+								<div  class="green col-md-12"><span>Name:</span><span> Project 1</span></div>
+								<div  class="green col-md-12"><span>Lead:</span><span> It</span></div>
+								<div  class="green col-md-12"><span>Date:</span><span> 02/26/2015</span></div>
+							</div>
+							<div class="red">
+								<div  class="red col-md-12"><span>Name:</span><span> Project 1</span></div>
+								<div  class="red col-md-12"><span>Lead:</span><span> It</span></div>
+								<div  class="red col-md-12"><span>Date:</span><span> 02/26/2015</span></div>
+							</div>
+							<div class="yellow">
+								<div  class="yellow col-md-12"><span>Name:</span><span> Project 1</span></div>
+								<div  class="yellow col-md-12"><span>Lead:</span><span> It</span></div>
+								<div  class="yellow col-md-12"><span>Date:</span><span> 02/26/2015</span></div>
+							</div>
+
+						
+
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="footer">
 				<div id="mark" ng-controller="treeMapCtrl"></div>

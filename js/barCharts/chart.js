@@ -1,5 +1,6 @@
-var barChart = function(){
-
+var barChart = function(pElement){
+  var lElement = pElement
+  console.log(pElement[0][0].offsetWidth)
   var n = 4, // number of layers
       m = 58, // number of samples per layer
       stack = d3.layout.stack(),
@@ -8,7 +9,7 @@ var barChart = function(){
       yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
 
   var margin = {top: 40, right: 10, bottom: 20, left: 10},
-      width = 960 - margin.left - margin.right,
+      width = pElement[0][0].offsetWidth - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 
   var x = d3.scale.ordinal()
@@ -29,7 +30,7 @@ var barChart = function(){
       .tickPadding(6)
       .orient("bottom");
 
-  var svg = d3.select("body").append("svg")
+  var svg = lElement.append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
